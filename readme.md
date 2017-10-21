@@ -2,7 +2,7 @@
 
 __Installation:__
 
-* `git clone https://github.com/mikim42/FDF.git`
+* `git clone https://github.com/mikim42/Game_of_life.git`
 * `make`
 
 **Usage:**
