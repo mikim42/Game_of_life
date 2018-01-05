@@ -6,7 +6,7 @@
 #    By: mikim <mikim@student.42.us.org>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/04/03 20:55:24 by mikim             #+#    #+#              #
-#    Updated: 2017/10/20 20:45:05 by mikim            ###   ########.fr        #
+#    Updated: 2018/01/04 23:40:20 by mikim            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,12 +42,12 @@ all: $(NAME)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 	@mkdir -p $(OBJDIR)
-	@$(CC) $(CFLAGS) -I includes -I $(LIBDIR)/includes -I $(MLXDIR) $< -o $@
+	@$(CC) $(CFLAGS) $(HEADER) $< -o $@
 
 $(NAME): $(OBJS)
 	@make -C $(MLXDIR)
 	@make -C $(LIBDIR)
-	@$(CC) $(OBJS) $(LIBS) -o $@
+	@$(CC) $(OBJS) $(LIBS) $(HEADER) -o $@
 	@echo "[Game_of_Life - 모래반지 빵야빵야!]"
 
 clean:
